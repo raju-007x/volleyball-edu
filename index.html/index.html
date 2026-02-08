@@ -66,12 +66,13 @@
                 <i class="fas fa-volleyball-ball text-yellow-500"></i> Volleyball
             </a>
             
-            <div class="hidden md:flex space-x-4 text-sm font-medium text-slate-600">
+            <div class="hidden md:flex items-center space-x-4 text-sm font-medium text-slate-600">
                 <a href="#history" class="hover:text-blue-600 transition">ประวัติ</a>
                 <a href="#court" class="hover:text-blue-600 transition">สนาม&อุปกรณ์</a>
                 <a href="#rules" class="hover:text-blue-600 transition">กติกา</a>
                 <a href="#positions" class="hover:text-blue-600 transition">ตำแหน่ง</a>
                 <a href="#techniques" class="hover:text-blue-600 transition">คลิปสอน</a>
+                <a href="#evaluation" class="text-blue-600 bg-blue-50 px-3 py-1 rounded-full hover:bg-blue-100 transition">แบบประเมิน</a>
             </div>
 
             <button class="md:hidden text-slate-600 text-xl"><i class="fas fa-bars"></i></button>
@@ -399,6 +400,38 @@
         </div>
     </section>
 
+    <section id="evaluation" class="py-20 bg-blue-600 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <i class="fas fa-volleyball-ball absolute -top-10 -left-10 text-9xl text-white"></i>
+            <i class="fas fa-clipboard-check absolute bottom-10 right-10 text-9xl text-white"></i>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">แบบประเมินความพึงพอใจ</h2>
+            <p class="text-blue-100 mb-10 max-w-2xl mx-auto">
+                ขอความร่วมมือผู้ใช้งานทุกท่าน ร่วมตอบแบบสอบถามเพื่อประเมินคุณภาพสื่อการสอน <br>
+                ความคิดเห็นของท่านจะเป็นประโยชน์อย่างยิ่งในการพัฒนาต่อไป
+            </p>
+
+            <div class="bg-white text-slate-800 p-8 rounded-2xl shadow-2xl max-w-sm mx-auto transform hover:scale-105 transition duration-300">
+                <div class="mb-4">
+                    <span class="bg-yellow-400 text-blue-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">SCAN ME</span>
+                </div>
+                
+                <div class="bg-slate-100 p-2 rounded-xl mb-6 inline-block">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://docs.google.com/forms/d/e/1FAIpQLSeADGWkgArQg26iJiJfh1fVF_T8UKC4KQW7VUt3FvJg0lTPaQ/viewform?usp=dialog" 
+                         alt="QR Code แบบประเมิน" 
+                         class="w-48 h-48 object-contain mix-blend-multiply">
+                </div>
+
+                <div class="space-y-3">
+                    <p class="font-bold text-lg">สแกนเพื่อทำแบบประเมิน</p>
+                    <p class="text-slate-500 text-sm">สแกน QR Code ด้านบนเพื่อเข้าสู่แบบฟอร์ม</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-blue-900 text-white py-10">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold mb-2">Volleyball Education Project</h2>
@@ -410,4 +443,5 @@
 
 </body>
 </html>
+
 
