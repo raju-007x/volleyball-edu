@@ -61,7 +61,7 @@
 <body class="bg-slate-50 text-slate-800">
 
     <nav class="bg-white/95 backdrop-blur-md fixed w-full z-50 shadow-sm border-b border-slate-100">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center relative">
             <a href="#" class="text-2xl font-bold text-blue-800 flex items-center gap-2">
                 <i class="fas fa-volleyball-ball text-yellow-500"></i> Volleyball
             </a>
@@ -75,7 +75,20 @@
                 <a href="#evaluation" class="text-blue-600 bg-blue-50 px-3 py-1 rounded-full hover:bg-blue-100 transition">แบบประเมิน</a>
             </div>
 
-            <button class="md:hidden text-slate-600 text-xl"><i class="fas fa-bars"></i></button>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 text-xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-lg pb-4 pt-2 px-4">
+            <div class="flex flex-col space-y-4 text-sm font-medium text-slate-600">
+                <a href="#history" class="mobile-link hover:text-blue-600 transition block">ประวัติ</a>
+                <a href="#court" class="mobile-link hover:text-blue-600 transition block">สนาม&อุปกรณ์</a>
+                <a href="#rules" class="mobile-link hover:text-blue-600 transition block">กติกา</a>
+                <a href="#positions" class="mobile-link hover:text-blue-600 transition block">ตำแหน่ง</a>
+                <a href="#techniques" class="mobile-link hover:text-blue-600 transition block">คลิปสอน</a>
+                <a href="#evaluation" class="mobile-link text-center text-blue-600 bg-blue-50 px-3 py-2 rounded-lg hover:bg-blue-100 transition block">แบบประเมิน</a>
+            </div>
         </div>
     </nav>
 
@@ -448,7 +461,28 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const links = document.querySelectorAll('.mobile-link');
+
+            // เมื่อกดปุ่มแฮมเบอร์เกอร์ ให้สลับคลาส hidden (เปิด/ปิด เมนู)
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // เมื่อกดเลือกลิงก์ใดๆ ในเมนูมือถือ ให้ซ่อนเมนูอัตโนมัติ
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
+
 
 
